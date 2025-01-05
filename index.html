@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourtix - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .neon-text {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0ff, 0 0 35px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 75px #0ff;
+        }
+        .neon-border {
+            box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0ff, 0 0 35px #0ff, 0 0 40px #0ff;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff; }
+            to { box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff; }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <header class="bg-gray-900 sticky top-0 z-10">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold neon-text">Fourtix</a>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
+                    <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+                </div>
+                <button id="menu-toggle" class="md:hidden text-white">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-700">Skills</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <img src="https://media.licdn.com/dms/image/D4D03AQHXnLOXMTQo2g/profile-displayphoto-shrink_800_800/0/1686326870059?e=1691625600&v=beta&t=Hy-Oa-Uy-Uy-Uy-Uy-Uy-Uy-Uy-Uy-Uy-Uy" alt="Fourtix" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-cyan-400 animate-float">
+                <h1 class="text-4xl font-bold mb-2 neon-text">Fourtix</h1>
+                <p class="text-xl mb-8 animate-pulse">Full Stack Developer | AI Enthusiast | Open Source Contributor</p>
+                <a href="#contact" class="bg-cyan-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-cyan-600 transition duration-300 animate-glow">Get in Touch</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center neon-text">About Me</h2>
+                <div class="bg-gray-800 p-6 rounded-lg neon-border">
+                    <p class="mb-4">Hello! I'm Fourtix, a passionate Full Stack Developer with a keen interest in AI and open source contributions. With a strong foundation in web technologies and a drive for continuous learning, I strive to create innovative solutions that make a positive impact.</p>
+                    <p>My journey in tech has led me to work on diverse projects, from web applications to AI-driven solutions. I'm always excited about new challenges and opportunities to grow my skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center neon-text">Skills & Technologies</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float">
+                        <i class="fab fa-html5 text-4xl mb-2 text-orange-500"></i>
+                        <p>HTML5</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 0.2s;">
+                        <i class="fab fa-css3-alt text-4xl mb-2 text-blue-500"></i>
+                        <p>CSS3</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 0.4s;">
+                        <i class="fab fa-js text-4xl mb-2 text-yellow-500"></i>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 0.6s;">
+                        <i class="fab fa-react text-4xl mb-2 text-blue-400"></i>
+                        <p>React</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 0.8s;">
+                        <i class="fab fa-node-js text-4xl mb-2 text-green-500"></i>
+                        <p>Node.js</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 1s;">
+                        <i class="fas fa-database text-4xl mb-2 text-blue-600"></i>
+                        <p>SQL</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 1.2s;">
+                        <i class="fab fa-python text-4xl mb-2 text-blue-500"></i>
+                        <p>Python</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 1.4s;">
+                        <i class="fas fa-brain text-4xl mb-2 text-purple-500"></i>
+                        <p>Machine Learning</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center neon-text">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 rounded-lg overflow-hidden neon-border">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-cyan-400">AI-Powered Chat Application</h3>
+                            <p class="text-gray-300 mb-4">A real-time chat application with AI-driven features for enhanced user experience.</p>
+                            <a href="#" class="text-cyan-500 hover:underline">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg overflow-hidden neon-border">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-cyan-400">E-commerce Platform</h3>
+                            <p class="text-gray-300 mb-4">A full-stack e-commerce solution with advanced features and optimized performance.</p>
+                            <a href="#" class="text-cyan-500 hover:underline">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg overflow-hidden neon-border">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-cyan-400">Open Source Contribution</h3>
+                            <p class="text-gray-300 mb-4">Significant contributions to popular open source projects in the web development ecosystem.</p>
+                            <a href="#" class="text-cyan-500 hover:underline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center neon-text">Get in Touch</h2>
+                <div class="max-w-md mx-auto">
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-1">Name:</label>
+                            <input type="text" id="name" name="name" required class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-1">Email:</label>
+                            <input type="email" id="email" name="email" required class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-1">Message:</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"></textarea>
+                        </div>
+                        <button type="submit" class="bg-cyan-500 text-white py-2 px-6 rounded-md hover:bg-cyan-600 transition duration-300 animate-glow">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="https://linkedin.com/in/codewithfourtix/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors duration-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://github.com/fourtix" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors duration-300">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="https://twitter.com/fourtix" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors duration-300">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-500">&copy; 2023 Fourtix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handling
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            const formValues = Object.fromEntries(formData.entries());
+            console.log('Form submitted:', formValues);
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Intersection Observer for fade-in animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
