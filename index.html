@@ -1,254 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fourtix - Full Stack Developer</title>
+    <title>Fourtix's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
-        body {
-            font-family: 'Orbitron', sans-serif;
-            background-color: #000;
-            color: #fff;
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+                    }
+                },
+                fontFamily: {
+                    'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+                    'body': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji']
+                }
+            }
         }
-        .neon-text {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0ff, 0 0 35px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 75px #0ff;
-        }
-        .neon-border {
-            box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0ff, 0 0 35px #0ff, 0 0 40px #0ff;
-        }
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .5; }
-        }
-        .animate-glow {
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from { box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff; }
-            to { box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff; }
-        }
-    </style>
+    </script>
 </head>
-<body class="bg-black text-white">
-    <header class="bg-gray-900 sticky top-0 z-10">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-xl font-bold neon-text">Fourtix</a>
-                <div class="hidden md:flex space-x-4">
-                    <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
-                    <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">Skills</a>
-                    <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">Projects</a>
-                    <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
-                </div>
-                <button id="menu-toggle" class="md:hidden text-white">
-                    <i class="fas fa-bars"></i>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white transition-colors duration-300 ease-in-out font-sans antialiased h-full">
+    <div class="flex h-full">
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <div id="content" class="max-w-3xl mx-auto">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Dashboard Sidebar -->
+        <aside class="w-64 bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700 flex flex-col">
+            <div class="p-4 flex flex-col items-center">
+                <img src="https://media.licdn.com/dms/image/D4D03AQHXnLq1XWoHvw/profile-displayphoto-shrink_800_800/0/1686326462499?e=1691625600&v=beta&t=Hy-Uu-Aw-Aw-Aw-Aw-Aw-Aw-Aw-Aw-Aw-Aw-Aw-Aw" alt="Fourtix" class="w-32 h-32 rounded-full mb-4">
+                <h1 class="text-xl font-bold mb-2">Fourtix</h1>
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center mb-4">Full Stack Developer | Blockchain Enthusiast | Entrepreneur</p>
+            </div>
+            <nav class="flex-1">
+                <ul class="space-y-2 p-4">
+                    <li>
+                        <button data-page="home" class="nav-btn flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <i class="fas fa-home w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="ml-3">Home</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button data-page="about" class="nav-btn flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <i class="fas fa-user w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="ml-3">About</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button data-page="skills" class="nav-btn flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <i class="fas fa-cogs w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="ml-3">Skills</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button data-page="projects" class="nav-btn flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <i class="fas fa-project-diagram w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="ml-3">Projects</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button data-page="contact" class="nav-btn flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <i class="fas fa-envelope w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="ml-3">Contact</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="p-4 mt-auto">
+                <a href="https://www.linkedin.com/in/codewithfourtix" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="fab fa-linkedin w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                    <span class="ml-3">LinkedIn</span>
+                </a>
+                <button id="darkModeToggle" class="flex items-center justify-center w-full p-2 mt-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i id="darkModeIcon" class="fas fa-moon w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                    <span class="ml-3">Toggle Dark Mode</span>
                 </button>
             </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
-            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-700">Skills</a>
-            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
-        </div>
-    </header>
-
-    <main>
-        <section id="hero" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <img src="https://media.licdn.com/dms/image/D4D03AQHXnLOXMTQo2g/profile-displayphoto-shrink_800_800/0/1686326870059?e=1691625600&v=beta&t=Hy-Oa-Uy-Uy-Uy-Uy-Uy-Uy-Uy-Uy-Uy-Uy" alt="Fourtix" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-cyan-400 animate-float">
-                <h1 class="text-4xl font-bold mb-2 neon-text">Fourtix</h1>
-                <p class="text-xl mb-8 animate-pulse">Full Stack Developer | AI Enthusiast | Open Source Contributor</p>
-                <a href="#contact" class="bg-cyan-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-cyan-600 transition duration-300 animate-glow">Get in Touch</a>
-            </div>
-        </section>
-
-        <section id="about" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center neon-text">About Me</h2>
-                <div class="bg-gray-800 p-6 rounded-lg neon-border">
-                    <p class="mb-4">Hello! I'm Fourtix, a passionate Full Stack Developer with a keen interest in AI and open source contributions. With a strong foundation in web technologies and a drive for continuous learning, I strive to create innovative solutions that make a positive impact.</p>
-                    <p>My journey in tech has led me to work on diverse projects, from web applications to AI-driven solutions. I'm always excited about new challenges and opportunities to grow my skills.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center neon-text">Skills & Technologies</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float">
-                        <i class="fab fa-html5 text-4xl mb-2 text-orange-500"></i>
-                        <p>HTML5</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 0.2s;">
-                        <i class="fab fa-css3-alt text-4xl mb-2 text-blue-500"></i>
-                        <p>CSS3</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 0.4s;">
-                        <i class="fab fa-js text-4xl mb-2 text-yellow-500"></i>
-                        <p>JavaScript</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 0.6s;">
-                        <i class="fab fa-react text-4xl mb-2 text-blue-400"></i>
-                        <p>React</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 0.8s;">
-                        <i class="fab fa-node-js text-4xl mb-2 text-green-500"></i>
-                        <p>Node.js</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 1s;">
-                        <i class="fas fa-database text-4xl mb-2 text-blue-600"></i>
-                        <p>SQL</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 1.2s;">
-                        <i class="fab fa-python text-4xl mb-2 text-blue-500"></i>
-                        <p>Python</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg text-center animate-float" style="animation-delay: 1.4s;">
-                        <i class="fas fa-brain text-4xl mb-2 text-purple-500"></i>
-                        <p>Machine Learning</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center neon-text">Featured Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gray-800 rounded-lg overflow-hidden neon-border">
-                        <img src="/placeholder.svg?height=200&width=400" alt="Project 1" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl mb-2 text-cyan-400">AI-Powered Chat Application</h3>
-                            <p class="text-gray-300 mb-4">A real-time chat application with AI-driven features for enhanced user experience.</p>
-                            <a href="#" class="text-cyan-500 hover:underline">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg overflow-hidden neon-border">
-                        <img src="/placeholder.svg?height=200&width=400" alt="Project 2" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl mb-2 text-cyan-400">E-commerce Platform</h3>
-                            <p class="text-gray-300 mb-4">A full-stack e-commerce solution with advanced features and optimized performance.</p>
-                            <a href="#" class="text-cyan-500 hover:underline">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="bg-gray-800 rounded-lg overflow-hidden neon-border">
-                        <img src="/placeholder.svg?height=200&width=400" alt="Project 3" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl mb-2 text-cyan-400">Open Source Contribution</h3>
-                            <p class="text-gray-300 mb-4">Significant contributions to popular open source projects in the web development ecosystem.</p>
-                            <a href="#" class="text-cyan-500 hover:underline">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center neon-text">Get in Touch</h2>
-                <div class="max-w-md mx-auto">
-                    <form id="contact-form" class="space-y-4">
-                        <div>
-                            <label for="name" class="block mb-1">Name:</label>
-                            <input type="text" id="name" name="name" required class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white">
-                        </div>
-                        <div>
-                            <label for="email" class="block mb-1">Email:</label>
-                            <input type="email" id="email" name="email" required class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white">
-                        </div>
-                        <div>
-                            <label for="message" class="block mb-1">Message:</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"></textarea>
-                        </div>
-                        <button type="submit" class="bg-cyan-500 text-white py-2 px-6 rounded-md hover:bg-cyan-600 transition duration-300 animate-glow">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center space-x-4 mb-4">
-                <a href="https://linkedin.com/in/codewithfourtix/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors duration-300">
-                    <i class="fab fa-linkedin text-2xl"></i>
-                </a>
-                <a href="https://github.com/fourtix" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors duration-300">
-                    <i class="fab fa-github text-2xl"></i>
-                </a>
-                <a href="https://twitter.com/fourtix" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors duration-300">
-                    <i class="fab fa-twitter text-2xl"></i>
-                </a>
-            </div>
-            <p class="text-gray-500">&copy; 2023 Fourtix. All rights reserved.</p>
-        </div>
-    </footer>
+        </aside>
+    </div>
 
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form submission handling
-        const contactForm = document.getElementById('contact-form');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-            const formValues = Object.fromEntries(formData.entries());
-            console.log('Form submitted:', formValues);
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        });
-
-        // Intersection Observer for fade-in animation
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
+        const pages = {
+            home: `
+                <h2 class="text-3xl font-bold mb-4">Welcome to My Portfolio</h2>
+                <p class="text-lg mb-4">Hello! I'm Fourtix, a passionate Full Stack Developer with a keen interest in blockchain technology and entrepreneurship. Welcome to my digital space where I showcase my projects, skills, and journey in the world of technology.</p>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">What I Do</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Develop full-stack web applications</li>
+                        <li>Explore and implement blockchain solutions</li>
+                        <li>Create innovative tech-driven business solutions</li>
+                        <li>Continuously learn and adapt to new technologies</li>
+                    </ul>
+                </div>
+            `,
+            about: `
+                <h2 class="text-3xl font-bold mb-4">About Me</h2>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <p class="text-lg mb-4">As a Full Stack Developer, I bring ideas to life through code. My journey in tech has been driven by curiosity and a desire to create meaningful solutions that can make a difference.</p>
+                    <p class="text-lg mb-4">With a strong foundation in both front-end and back-end technologies, I enjoy tackling complex problems and turning them into elegant, user-friendly applications. My experience spans from crafting responsive UIs to designing robust server architectures.</p>
+                    <p class="text-lg mb-4">Beyond traditional web development, I'm deeply fascinated by blockchain technology and its potential to revolutionize various industries. This interest has led me to explore and work on several blockchain-based projects.</p>
+                    <p class="text-lg">As an entrepreneur at heart, I'm always on the lookout for opportunities where technology can solve real-world problems. I believe in the power of innovation and collaboration to drive positive change in the world.</p>
+                </div>
+            `,
+            skills: `
+                <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Front-end</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li>React.js, Vue.js</li>
+                            <li>Tailwind CSS, Bootstrap</li>
+                            <li>Responsive Web Design</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Back-end</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Node.js, Express.js</li>
+                            <li>Python, Django</li>
+                            <li>RESTful API Design</li>
+                            <li>Database Management (SQL, NoSQL)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Blockchain</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Smart Contract Development (Solidity)</li>
+                            <li>Ethereum, Binance Smart Chain</li>
+                            <li>Web3.js, Ethers.js</li>
+                            <li>DApp Development</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Tools & Others</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Git, GitHub</li>
+                            <li>Docker</li>
+                            <li>CI/CD Pipelines</li>
+                            <li>Agile Methodologies</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+            projects: `
+                <h2 class="text-3xl font-bold mb-4">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Blockchain Voting System</h3>
+                        <p class="mb-4">A decentralized voting system built on Ethereum, ensuring transparency and security in the voting process.</p>
+                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
+                        <p class="mb-4">A full-stack e-commerce solution with features like product catalog, shopping cart, and secure payment integration.</p>
+                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Crypto Portfolio Tracker</h3>
+                        <p class="mb-4">A web application for tracking and analyzing cryptocurrency portfolios with real-time data and visualizations.</p>
+                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">AI-powered Chatbot</h3>
+                        <p class="mb-4">An intelligent chatbot built with natural language processing capabilities for customer support automation.</p>
+                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
+                    </div>
+                </div>
+            `,
+            contact: `
+                <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <p class="text-lg mb-4">I'm always open to new opportunities, collaborations, or just a friendly chat about technology and innovation. Feel free to reach out to me through any of the following channels:</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope w-5 h-5 mr-2 text-gray-500 dark:text-gray-400"></i>
+                            <span>Email: fourtix@example.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-linkedin w-5 h-5 mr-2 text-gray-500 dark:text-gray-400"></i>
+                            <span>LinkedIn: linkedin.com/in/codewithfourtix</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-github w-5 h-5 mr-2 text-gray-500 dark:text-gray-400"></i>
+                            <span>GitHub: github.com/fourtix</span>
+                        </li>
+                    </ul>
+                    <p class="text-lg mt-4">I typically respond within 24 hours. Looking forward to connecting with you!</p>
+                </div>
+            `
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    observer.unobserve(entry.target);
+        const contentElement = document.getElementById('content');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+
+        // Navigation
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', (event) => {
+                const page = event.target.closest('.nav-btn').dataset.page;
+                if (page && pages[page]) {
+                    contentElement.innerHTML = pages[page];
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
         });
+
+        // Dark mode toggle
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            updateDarkModeIcon();
+        });
+
+        function updateDarkModeIcon() {
+            const isDarkMode = document.documentElement.classList.contains('dark');
+            darkModeIcon.className = isDarkMode
+                ? 'fas fa-sun w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
+                : 'fas fa-moon w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white';
+        }
+
+        // Initial content load
+        contentElement.innerHTML = pages.home;
+        updateDarkModeIcon();
     </script>
 </body>
 </html>
+
