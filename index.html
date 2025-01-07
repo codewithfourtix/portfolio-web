@@ -6,13 +6,6 @@
     <title>Fourtix's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        aside {
-    border-right: 1px solid #e5e7eb; /* Light mode border */
-    border-right: 1px solid #374151; /* Dark mode border */
-}
-
-    </style>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -31,16 +24,12 @@
     </script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white transition-colors duration-300 ease-in-out font-sans antialiased h-full">
-    <div class="flex h-full">
-        <!-- Main Content -->
-        <!-- <div class="flex-1 p-8 overflow-y-auto">
-            <div id="content" class="max-w-3xl mx-auto">
-              
-            </div>
-        </div> -->
+    <div class="flex h-full flex-col md:flex-row">
+        <button id="sidebarToggle" class="md:hidden fixed top-4 left-4 z-20 p-2 bg-white dark:bg-gray-800 rounded-md shadow-md">
+            <i class="fas fa-bars"></i>
+        </button>
         
-        <aside class="w-64 bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700 flex flex-col">
-        <!-- Dashboard Sidebar -->
+        <aside id="sidebar" class="fixed md:static top-0 left-0 z-10 w-64 h-full bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0">
             <div class="p-4 flex flex-col items-center">
                 <img src="IMG_20241130_142347.jpg" alt="Fourtix" class="w-32 h-32 rounded-full mb-4">
                 <h1 class="text-xl font-bold mb-2">Fourtix</h1>
@@ -91,35 +80,37 @@
                 </button>
             </div>
         </aside>
-        <div class="flex-1 p-8 overflow-y-auto">
+        
+        <main class="flex-1 p-20 overflow-y-auto">
             <div id="content" class="max-w-3xl mx-auto">
                 <!-- Content will be dynamically inserted here -->
             </div>
-        </div>
+        </main>
     </div>
 
     <script>
         const pages = {
             home: `
                 <h2 class="text-3xl font-bold mb-4">Welcome to My Portfolio</h2>
-                <p class="text-lg mb-4">Hello! I'm Fourtix, a passionate Full Stack Developer with a keen interest in blockchain technology and entrepreneurship. Welcome to my digital space where I showcase my projects, skills, and journey in the world of technology.</p>
+                <p class="text-lg mb-4">Hello! I'm Fourtix, a passionate Full Stack Developer with a deep curiosity for solving real-world problems through technology. My journey is fueled by a love for learning and creating impactful solutions.</p>
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">What I Do</h3>
+                    <h3 class="text-xl font-semibold mb-2">What Servcies I Provide</h3>
                     <ul class="list-disc list-inside space-y-2">
                         <li>Develop full-stack web applications</li>
-                        <li>Explore and implement blockchain solutions</li>
+                        <li>Tech Consultancy</li>
                         <li>Create innovative tech-driven business solutions</li>
-                        <li>Continuously learn and adapt to new technologies</li>
+                        <li>Custom API Development and Integration</li>
+                        <li>Quick Landing pages </li>
                     </ul>
                 </div>
             `,
             about: `
                 <h2 class="text-3xl font-bold mb-4">About Me</h2>
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                    <p class="text-lg mb-4">As a Full Stack Developer, I bring ideas to life through code. My journey in tech has been driven by curiosity and a desire to create meaningful solutions that can make a difference.</p>
-                    <p class="text-lg mb-4">With a strong foundation in both front-end and back-end technologies, I enjoy tackling complex problems and turning them into elegant, user-friendly applications. My experience spans from crafting responsive UIs to designing robust server architectures.</p>
-                    <p class="text-lg mb-4">Beyond traditional web development, I'm deeply fascinated by blockchain technology and its potential to revolutionize various industries. This interest has led me to explore and work on several blockchain-based projects.</p>
-                    <p class="text-lg">As an entrepreneur at heart, I'm always on the lookout for opportunities where technology can solve real-world problems. I believe in the power of innovation and collaboration to drive positive change in the world.</p>
+                    <p class="text-lg mb-4">I'm a passionate programmer with a strong foundation in frontend technologies. My journey into programming began on May 25th, 2022, after matriculation, and since then, I have developed expertise in HTML, CSS, JavaScript, ReactJS, Bootstrap, Tailwind, Ant Design, Redux, and API integration through RapidAPI. This foundation has enabled me to create dynamic and responsive web applications, showcasing my ability to bring ideas to life through code.</p>
+                    <p class="text-lg mb-4">As a student at Government College University Lahore, I actively participated in the Skill Development Society, where I honed my programming and problem-solving skills. During this time, I built my own website, which allowed me to gain hands-on experience in web development. Beyond academics, I manage an Instagram account, @code_with_fourtix, where I share programming tutorials and insights with a growing community of over 92,000 followers, helping aspiring developers enhance their skills.</p>
+                    <p class="text-lg mb-4">With the unwavering support of family, friends, and mentors, I am constantly striving to refine my skills and take on new challenges. I’m excited about the future and look forward to seizing opportunities to grow as a developer. My ultimate goal is to make a significant impact in the tech world through innovation, collaboration, and dedication.</p>
+                    With the unwavering support of family, friends, and mentors, I am constantly striving to refine my skills and take on new challenges. I’m excited about the future and look forward to seizing opportunities to grow as a developer. My ultimate goal is to make a significant impact in the tech world through innovation, collaboration, and dedication.
                 </div>
             `,
             skills: `
@@ -129,8 +120,8 @@
                         <h3 class="text-xl font-semibold mb-2">Front-end</h3>
                         <ul class="list-disc list-inside space-y-2">
                             <li>HTML5, CSS3, JavaScript (ES6+)</li>
-                            <li>React.js, Vue.js</li>
-                            <li>Tailwind CSS, Bootstrap</li>
+                            <li>React.js </li>
+                            <li>Tailwind CSS, Bootstrap , Antdesign</li>
                             <li>Responsive Web Design</li>
                         </ul>
                     </div>
@@ -138,18 +129,9 @@
                         <h3 class="text-xl font-semibold mb-2">Back-end</h3>
                         <ul class="list-disc list-inside space-y-2">
                             <li>Node.js, Express.js</li>
-                            <li>Python, Django</li>
-                            <li>RESTful API Design</li>
+                            <li>Mongo DB</li>
+                            <li>RESTful APIs</li>
                             <li>Database Management (SQL, NoSQL)</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-2">Blockchain</h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Smart Contract Development (Solidity)</li>
-                            <li>Ethereum, Binance Smart Chain</li>
-                            <li>Web3.js, Ethers.js</li>
-                            <li>DApp Development</li>
                         </ul>
                     </div>
                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
@@ -158,7 +140,6 @@
                             <li>Git, GitHub</li>
                             <li>Docker</li>
                             <li>CI/CD Pipelines</li>
-                            <li>Agile Methodologies</li>
                         </ul>
                     </div>
                 </div>
@@ -167,24 +148,10 @@
                 <h2 class="text-3xl font-bold mb-4">My Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-2">Blockchain Voting System</h3>
-                        <p class="mb-4">A decentralized voting system built on Ethereum, ensuring transparency and security in the voting process.</p>
-                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
-                        <p class="mb-4">A full-stack e-commerce solution with features like product catalog, shopping cart, and secure payment integration.</p>
-                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-2">Crypto Portfolio Tracker</h3>
-                        <p class="mb-4">A web application for tracking and analyzing cryptocurrency portfolios with real-time data and visualizations.</p>
-                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-2">AI-powered Chatbot</h3>
-                        <p class="mb-4">An intelligent chatbot built with natural language processing capabilities for customer support automation.</p>
-                        <a href="#" class="text-blue-600 hover:underline">View Project</a>
+                        <img src="gemini.png" alt="gemini ai" class="w-full h-48 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold mb-2">Gemini Ai Clone</h3>
+                        <p class="mb-4">A React.js project replicating Google Gemini AI with Gemini AI API integration. Pure CSS for styling and responsive design for optimal viewing on all devices. Built for learning and continuous improvement.</p>
+                        <a href="https://gemini-ai-clone.netlify.app" class="text-blue-600 hover:underline">View Project</a>
                     </div>
                 </div>
             `,
@@ -195,7 +162,7 @@
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-envelope w-5 h-5 mr-2 text-gray-500 dark:text-gray-400"></i>
-                            <span>Email: fourtix@example.com</span>
+                            <span>Email: codewithfourtix@example.com</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fab fa-linkedin w-5 h-5 mr-2 text-gray-500 dark:text-gray-400"></i>
@@ -203,7 +170,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fab fa-github w-5 h-5 mr-2 text-gray-500 dark:text-gray-400"></i>
-                            <span>GitHub: github.com/fourtix</span>
+                            <span>GitHub: github.com/codewithfourtix</span>
                         </li>
                     </ul>
                     <p class="text-lg mt-4">I typically respond within 24 hours. Looking forward to connecting with you!</p>
@@ -214,6 +181,8 @@
         const contentElement = document.getElementById('content');
         const darkModeToggle = document.getElementById('darkModeToggle');
         const darkModeIcon = document.getElementById('darkModeIcon');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
 
         // Navigation
         document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -221,6 +190,9 @@
                 const page = event.target.closest('.nav-btn').dataset.page;
                 if (page && pages[page]) {
                     contentElement.innerHTML = pages[page];
+                    if (window.innerWidth < 768) {
+                        sidebar.classList.add('-translate-x-full');
+                    }
                 }
             });
         });
@@ -238,10 +210,21 @@
                 : 'fas fa-moon w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white';
         }
 
+        // Sidebar toggle for mobile
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (event) => {
+            if (window.innerWidth < 768 && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+                sidebar.classList.add('-translate-x-full');
+            }
+        });
+
         // Initial content load
         contentElement.innerHTML = pages.home;
         updateDarkModeIcon();
     </script>
 </body>
 </html>
-
